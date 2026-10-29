@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ASSET = "/assets/";
+const ASSET = `${import.meta.env.BASE_URL}assets/`;
 
 const flavors = [
   {
