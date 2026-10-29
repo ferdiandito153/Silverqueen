@@ -60,3 +60,61 @@
   .hero-product-image { top: 52px; height: 210px; }
   .flavor-product-image { max-width: 165px; height: 155px; }
 }
+
+/* Foto produk utama */
+.hero-product-image {
+  position: absolute;
+  z-index: 2;
+  left: 15%;
+  top: 90px;
+  width: min(78%, 390px);
+  height: 290px;
+  display: grid;
+  place-items: center;
+  transform: rotate(-9deg);
+}
+
+.hero-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 18px #51210f38);
+}
+
+/* Foto varian produk */
+.feature-product {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+}
+
+.flavor-product-image {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 12px #51210f30);
+  transition: transform .3s ease;
+}
+
+.flavor-product-image:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+@media (max-width: 760px) {
+  .hero-product-image {
+    left: 12%;
+    top: 65px;
+    width: 78%;
+    height: 245px;
+  }
+
+  .flavor-product-image {
+    max-width: 210px;
+    height: 190px;
+  }
+}
+
