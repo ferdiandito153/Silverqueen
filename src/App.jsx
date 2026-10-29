@@ -47,23 +47,28 @@ const flavors = [
 
 const gallery = [
   {
-    image: "https://images.unsplash.com/photo-1548907040-4d42a0c7d6c5?auto=format&fit=crop&w=800&q=85",
-    label: "01 / CHOCOLATE TIME",
+    image: `${ASSET}01-silverqueen-colorful.jpg`,
+    label: "01 / COLORFUL MOMENT",
     title: "A LITTLE JOY.",
   },
   {
-    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=800&q=85",
-    label: "02 / SWEET PAUSE",
-    title: "TAKE A BREAK.",
+    image: `${ASSET}02-silverqueen-milk-chocolate.jpg`,
+    label: "02 / THE CLASSIC",
+    title: "SWEET PAUSE.",
   },
   {
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=85",
-    label: "03 / SHARE THE LOVE",
-    title: "MADE TO SHARE.",
+    image: `${ASSET}03-silverqueen-dark-chocolate.jpg`,
+    label: "03 / BOLD & RICH",
+    title: "OWN YOUR MOOD.",
   },
   {
-    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=85",
-    label: "04 / YOUR HAPPY PLACE",
+    image: `${ASSET}04-silverqueen-chunkybar.jpg`,
+    label: "04 / EXTRA CRUNCH",
+    title: "MAKE IT CRUNCHY.",
+  },
+  {
+    image: `${ASSET}05-silverqueen-fruity-nutty.jpg`,
+    label: "05 / FRUITY & NUTTY",
     title: "SWEET MOMENT.",
   },
 ];
@@ -92,9 +97,8 @@ function ProductArt() {
         <img
           src={`${ASSET}01-silverqueen-colorful.jpg`}
           alt="Konsep visual produk SilverQueen colorful"
-          onError={(event) => {
-            event.currentTarget.style.display = "none";
-          }}
+          loading="eager"
+          fetchPriority="high"
         />
       </div>
 
@@ -257,10 +261,8 @@ function App() {
                 <img
                   className="flavor-product-image"
                   src={activeFlavor.image}
-                  alt={activeFlavor.name}
-                  onError={(event) => {
-                    event.currentTarget.alt = `Gambar ${activeFlavor.name} belum ditemukan`;
-                  }}
+                  alt={`Konsep visual ${activeFlavor.name} SilverQueen`}
+                  loading="lazy"
                 />
                 <span className="feature-cashew">◔</span>
                 <span className="feature-spark">✳</span>
